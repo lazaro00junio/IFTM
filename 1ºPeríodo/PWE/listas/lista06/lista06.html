@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Cadastro</legend>
+            <label for="nome">Nome</label>
+            <br>
+            <input type="text">
+            <br>
+            <label for="">Selecione o seu sexo</label>
+            <br>
+            <input type="radio" id="masculino" name="genero" value="m">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" name="genero" value="f">
+            <label for="feminino">Feminino</label>
+            <br>
+            <label for="estado-civil">Selecione o seu estado civil:</label>
+            <br>
+            <select name="estado-civil" id="">
+                <option value="" disabled selected>Selecione</option>
+                <option value="solteiro">Solteiro</option>
+                <option value="casado">Casado</option>
+                <option value="uniao-estavel">União Estável</option>
+                <option value="viuvo">Viúvo</option>
+                <option value="divorciado">Divorciado</option>
+                <option value="outro">Outro</option>
+            </select>
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="email">
+            <br>
+            <label for="telefone">Telefone</label>
+            <br>
+            <input type="tel" name="telefone" placeholder="(99) 99999-9999">
+            <br>
+            <label for="site-pesoal">Site Pessoal</label>
+            <br>
+            <input type="url" name="website" placeholder="https://seusite.com">
+            <br>
+            <label for="endereco">Endereço</label>
+            <br>
+            <input type="text">
+            <br>
+            <label for="numero">Numero</label>
+            <br>
+            <input type="number">
+            <br>
+            <label for="data-de-nascimento">Data de Nascimento</label>
+            <br>
+            <input type="date">
+            <br>
+            <button type="submit">Finalizar cadastro</button>
+            <button type="menu">Limpar</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
