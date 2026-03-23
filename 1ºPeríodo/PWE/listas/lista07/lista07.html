@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Cadastro</legend>
+            <label for="nome">Nome</label>
+            <br>
+            <input type="text" required>
+            <br>
+            <label for="sexo">Selecione o seu gênero</label>
+            <br>
+            <input type="radio" id="masculino" name="genero" value="m" required>
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" name="genero" value="f" required>
+            <label for="feminino">Feminino</label>
+            <input type="radio" id="outro" name="genero" value="outro" required>
+            <label for="outro">Outro</label>
+            <input type="radio" id="prefiro-nao-dizer" name="genero" value="nao-declarado" required>
+            <label for="prefiro-nao-dizer">Prefiro não dizer</label>
+            <br>
+            <label for="estado-civil">Selecione o seu estado civil:</label>
+            <br>
+            <select name="estado-civil" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="solteiro">Solteiro</option>
+                <option value="casado">Casado</option>
+                <option value="uniao-estavel">União Estável</option>
+                <option value="viuvo">Viúvo</option>
+                <option value="divorciado">Divorciado</option>
+                <option value="outro">Outro</option>
+            </select>
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="email" placeholder="email@email.com" required>
+            <br>
+            <label for="telefone">Telefone</label>
+            <br>
+            <input type="tel" name="telefone" placeholder="(99) 99999-9999" required>
+            <br>
+            <label for="site-pesoal">Site Pessoal(Opcional)</label>
+            <br>
+            <input type="url" name="website" placeholder="https://seusite.com">
+            <br>
+            <label for="endereco">Endereço</label>
+            <br>
+            <input type="text" required>
+            <br>
+            <label for="numero" required>Numero</label>
+            <br>
+            <input type="number" min="0" required>
+            <br>
+            <label for="data-de-nascimento" required>Data de Nascimento</label>
+            <br>
+            <input type="date">
+            <br>
+            <button type="submit">Finalizar cadastro</button>
+            <button type="menu">Limpar</button>
+        </fieldset>
+    </form>
+</body>
+</html>
