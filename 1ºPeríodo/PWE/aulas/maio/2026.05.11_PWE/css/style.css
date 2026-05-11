@@ -1,0 +1,12 @@
+.box{
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    background-image: url('/img/zapzap.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
