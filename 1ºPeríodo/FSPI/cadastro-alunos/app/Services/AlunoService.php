@@ -26,7 +26,7 @@ caracteres.'
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return ['erro' => 'O e-mail informado é inválido.'];
         }
-        // Regra 5: curso obrigatória
+        // Regra 5: curso obrigatório
         if ($curso === '') {
             return ['erro' => 'O curso é obrigatório.'];
 
