@@ -86,6 +86,7 @@ $mensagem = $_GET['msg'] ?? '';
             Formulário → Controller → Service → Repository → Banco de
             Dados
         </div>
+        <!--  Exibe uma mensagem de erro ou de sucesso, especificada no aquivo Service  -->
         <?php if ($mensagem !== ''): ?>
             <div class="mensagem">
                 <?= htmlspecialchars($mensagem) ?>
