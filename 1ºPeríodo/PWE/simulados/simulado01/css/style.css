@@ -11,10 +11,9 @@ header nav ul{
     flex-direction: row;
     list-style: none;
     background-color: orangered;
-    justify-content: space-between;
+    justify-content: center;
 }
 nav a:link, a:visited{
-
     color: white;
     text-decoration: none;
     padding: 20px;
@@ -29,8 +28,7 @@ section{
 }
 .memphix{
     background-color: darkblue;
-    padding: 20px !important; 
-    
+    padding: 20px; 
 }
 .memphix > div{
     background-color: white;
@@ -62,18 +60,18 @@ section{
     text-align: center;
 }
 .celulares >.container> div p{
-    text-align: justify;
     margin: 20px 0px;
 }
 .celulares >.container> div summary{
-    text-align: justify;
     color: orangered;
     font-weight: bold;
+}
+.celulares >.container> div p, .celulares >.container> div summary{
+    text-align: justify;
 }
 .modelos h2{
     text-align: center;
 }
-
 .modelos p{
     margin: 20px 0px;
     text-align: justify;
@@ -113,7 +111,6 @@ footer{
     li{
         flex-grow: 0;
     }
-
     .modelos h2{
     text-align: justify;
 }
