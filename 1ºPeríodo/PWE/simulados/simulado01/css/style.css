@@ -45,7 +45,7 @@ section{
 .memphix .logo{
     height: 300px;
     width: 100%;
-    background-image: url('/img/logoManutencao.png');
+    background-image: url('../img/logoManutencao.png');
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -94,7 +94,7 @@ footer{
     }
     .memphix .logo{
         height: 350px;
-        background-image: url('/img/logos.png');
+        background-image: url('../img/logos.png');
     }
     .memphix p{
         font-size: 22px;
