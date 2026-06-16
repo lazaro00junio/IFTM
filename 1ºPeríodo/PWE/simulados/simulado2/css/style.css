@@ -17,6 +17,7 @@ header nav ul {
     list-style: none;
     justify-content: center;
     background-color: darkblue;
+    text-align:center;
 }
 .linha1{
     grid-column: span 3;
