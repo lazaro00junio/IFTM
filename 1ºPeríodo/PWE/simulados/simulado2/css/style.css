@@ -17,7 +17,6 @@ header nav ul {
     list-style: none;
     justify-content: center;
     background-color: darkblue;
-    text-align: center;
 }
 .linha1{
     grid-column: span 3;
@@ -106,7 +105,9 @@ footer p {
     header nav ul {
         grid-template-columns: repeat(7, auto);
     }
-
+    .linha1,.linha2{
+    grid-column: span 1;
+}
     header nav ul li {
         padding: 20px 40px;
     }
