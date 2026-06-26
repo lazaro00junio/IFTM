@@ -24,6 +24,8 @@ header>div {
 
 header h1 {
     font-weight: lighter;
+    font-size: 22px;
+    margin-left: 10px;
 }
 
 header nav ul {
@@ -49,7 +51,7 @@ header h1 a:hover {
 header nav a:visited,
 header nav a:link,
 .atual:hover {
-    padding: 15px;
+    padding: 15px 10px;
     display: inline-block;
     border-bottom: 4px solid #cc9b80;
 }
@@ -72,7 +74,7 @@ header nav a:active,
     height: 200px;
 }
 
-section{
+section {
     width: 100%;
     padding: 20px;
     text-align: center;
@@ -86,9 +88,10 @@ section:nth-of-type(even) {
     background-color: rgb(171, 189, 255);
 }
 
-.mundo{
+.mundo,.mural {
     text-align: left;
 }
+
 .titulo {
     border-bottom: solid black 4px;
     margin: 0px auto 20px;
@@ -137,7 +140,8 @@ p {
 footer {
     padding: 40px;
 }
-footer p{
+
+footer p {
     text-align: center;
 }
 
@@ -147,6 +151,28 @@ footer p{
     gap: 20px;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px;
+}
+
+.grid-container img {
+    width: 100%;
+}
+
+.grid-container p {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.mescla-duas-colunas{
+    grid-row: span 2;
+}
+
+.yosemite .titulo, .sunset .titulo {
+    width: 300px;
+}
 
 .imagine img {
     width: 100%;
@@ -156,16 +182,30 @@ footer p{
     text-align: center;
 }
 
-.presencie img{
+.presencie img {
     width: 100%;
 }
 
 @media screen and (min-width: 1540px) {
+    header h1 {
+        font-weight: lighter;
+        font-size: 32px;
+    }
+
     .container {
         flex-direction: row;
     }
 
-    .imagine>.container>div, .presencie>.container>div {
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+
+    .grid-container img {
+        width: 700px;
+    }
+
+    .imagine>.container>div,
+    .presencie>.container>div {
         width: 50%;
     }
 
@@ -173,5 +213,9 @@ footer p{
     section>div {
         width: 1400px;
         margin: auto;
+    }
+
+    .yosemite .titulo {
+        margin-bottom: 20px;
     }
 }
