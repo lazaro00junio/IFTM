@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    transition: all 0.2s;
 }
 
 body {
@@ -88,7 +89,8 @@ section:nth-of-type(even) {
     background-color: rgb(171, 189, 255);
 }
 
-.mundo,.mural {
+.mundo,
+.mural {
     text-align: left;
 }
 
@@ -96,6 +98,14 @@ section:nth-of-type(even) {
     border-bottom: solid black 4px;
     margin: 0px auto 20px;
     width: 200px;
+}
+
+img {
+    border-radius: 30px;
+}
+
+img:hover {
+    transform: scale(1.02);
 }
 
 button {
@@ -154,7 +164,7 @@ footer p {
 .grid-container {
     display: grid;
     grid-template-columns: auto;
-    gap: 5px;
+    gap: 20px;
 }
 
 .grid-container img {
@@ -162,15 +172,15 @@ footer p {
 }
 
 .grid-container p {
-    margin-top: 0px;
+    margin-top: 5px;
     text-align: center;
 }
 
-.mescla-duas-colunas{
-    grid-row: span 2;
-}
 
-.yosemite .titulo, .sunset .titulo {
+
+.yosemite .titulo,
+.sunset .titulo,
+.roxo .titulo {
     width: 300px;
 }
 
@@ -186,10 +196,16 @@ footer p {
     width: 100%;
 }
 
-@media screen and (min-width: 1540px) {
+
+
+@media screen and (min-width: 1500px) {
     header h1 {
         font-weight: lighter;
         font-size: 32px;
+    }
+
+    .imagem-topo {
+        height: 500px;
     }
 
     .container {
@@ -217,5 +233,24 @@ footer p {
 
     .yosemite .titulo {
         margin-bottom: 20px;
+    }
+
+    .roxo .grid-container {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    .roxo img {
+        width: 460px;
+    }
+    .mescla-duas-linhas {
+    grid-row: span 2;
+}
+
+    .mescla-duas-colunas {
+        grid-column: span 2;
+    }
+    .mescla-duas-colunas img{
+        width: 920px;
     }
 }
