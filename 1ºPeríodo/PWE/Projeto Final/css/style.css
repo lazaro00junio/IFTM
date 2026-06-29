@@ -89,6 +89,10 @@ section:nth-of-type(even) {
     background-color: rgb(171, 189, 255);
 }
 
+section img {
+    width: 100%;
+}
+
 .mundo,
 .mural {
     text-align: left;
@@ -97,7 +101,7 @@ section:nth-of-type(even) {
 .titulo {
     border-bottom: solid black 4px;
     margin: 0px auto 20px;
-    width: 200px;
+    width: 300px;
 }
 
 img {
@@ -116,12 +120,13 @@ button {
     font-weight: bold;
     font-size: 17px;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
     transform: scale(1.04);
 }
 
-button:active{
+button:active {
     transform: scale(0.9);
     transition: 0.1s;
 }
@@ -177,36 +182,19 @@ footer p {
     gap: 20px;
 }
 
-.grid-container img {
-    width: 100%;
-}
-
 .grid-container p {
     margin-top: 5px;
     text-align: center;
 }
 
 
-
-.yosemite .titulo,
-.sunset .titulo,
-.roxo .titulo {
-    width: 300px;
-}
-
-.imagine img {
-    width: 100%;
-}
-
 .algo-importante {
     text-align: center;
 }
 
-.presencie img {
-    width: 100%;
+.quem-somos img {
+    margin-top: 10px;
 }
-
-
 
 @media screen and (min-width: 1500px) {
     header h1 {
@@ -250,17 +238,27 @@ footer p {
         grid-template-rows: auto auto auto;
     }
 
-    .roxo img {
+    .roxo img,
+    .nossos-objetivos img {
         width: 460px;
     }
+
     .mescla-duas-linhas {
-    grid-row: span 2;
-}
+        grid-row: span 2;
+    }
 
     .mescla-duas-colunas {
         grid-column: span 2;
     }
-    .mescla-duas-colunas img{
+
+    .mescla-duas-colunas img {
         width: 920px;
     }
+
+    .quem-somos img {
+        width: 700px;
+        float: left;
+        margin-right: 20px;
+    }
+
 }
