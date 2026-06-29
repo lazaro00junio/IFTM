@@ -108,12 +108,22 @@ img:hover {
     transform: scale(1.02);
 }
 
+
 button {
     padding: 20px 10px;
     border-radius: 20px;
     border: none;
     font-weight: bold;
     font-size: 17px;
+}
+button:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+button:active{
+    transform: scale(0.9);
+    transition: 0.1s;
 }
 
 .botao1 {
