@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class Lista01 {
+public class Lista01{
 
     public static int leInt1(int x) {
         return Integer.parseInt(JOptionPane.showInputDialog("Insira o " + x + "º número:"));
@@ -45,7 +45,7 @@ public class Lista01 {
         return (-b + Math.sqrt(d)) / (2 * a);
     }
 
-    public static double calculX2(double d, double a, double b) {
+    public static double calculaX2(double d, double a, double b) {
         return (-b - Math.sqrt(d)) / (2 * a);
     }
 
@@ -63,7 +63,7 @@ public class Lista01 {
             JOptionPane.showMessageDialog(null, "Não existem raizes reais para esta equação.");
         } else {
             x1=calculaX1(d, a, b);
-            x2=calculaX1(d, a, b);
+            x2=calculaX2(d, a, b);
             exibe2(x1,x2);
         }
     }
@@ -87,9 +87,44 @@ public class Lista01 {
         media=calculaMedia(n1,n2,2);
         exibe3(media);
     }
-    public static int menu() {
-        return Integer.parseInt(JOptionPane.showInputDialog("    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n\n\n17- SAIR\n\nDIGITE A OPÇÃO:"));
+    
+    public static double leDouble4(int x){
+        return Double.parseDouble(JOptionPane.showInputDialog(null, "Insira o valor do "+x+"º lado do triângulo: "));
     }
+    
+    public static String tipoTriangulo(double a, double b, double c){
+        if(a==b && b==c){
+            return "É um triângulo equilátero";
+        }else if((a==b || b==a || b==c || c==a)&&(a!=b || b!=a || b!=c || c!=a)){
+            return "É um triângulo isóceles";
+        }else if(Math.pow(a,2)+Math.pow(b,2)==Math.pow(c,2) || Math.pow(a,2)+Math.pow(c,2)==Math.pow(b,2) || Math.pow(c,2)+Math.pow(b,2)==Math.pow(a,2)){
+            return "É um triângulo retângulo";
+        }else {
+            return "É um triângulo escaleno";
+        }
+    }
+    
+    public static void exibe4(String x){
+    JOptionPane.showMessageDialog(null, x);
+    }
+    public static void exe4(){
+            double a=0,b=0,c=0;
+            String resultado;
+            a=leDouble4(1);
+            b=leDouble4(2);
+            c=leDouble4(3);
+            if( ((a+b<c) && (b+c<a) && (a+c<b)) ){
+                JOptionPane.showMessageDialog(null,"Não é possível formar um triângulo");
+            }else{
+            resultado=tipoTriangulo(a,b,c);
+            exibe4(resultado);
+            }
+    
+    }
+    public static int menu() {
+        return Integer.parseInt(JOptionPane.showInputDialog("    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n\n17- SAIR\n\nDIGITE A OPÇÃO:"));
+    }
+
     public static void main(String[] args) {
         int op = 0;
         while (op != 17) {
@@ -104,9 +139,9 @@ public class Lista01 {
                 case 3:
                     exe3();
                     break;
-                // case 4:
-                //     exe4();
-                //     break;
+                case 4:
+                    exe4();
+                    break;
                 // case 5:
                 //     exe5();
                 //     break;
