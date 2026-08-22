@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript">
+        primeroNome = prompt("Qual o seu primeiro nome?");
+        sobrenome = prompt("Qual o seu sobrenome?");
+        n=prompt("Digite um inteiro positivo:");
+        cor=prompt("Digite uma cor ,de uma só palavra, em inglês:");
+        nomeCompleto= primeroNome+" "+sobrenome;
+        for (i = 1; i <= n; i++)
+        if(i%2!=0)
+            document.write("<p>" + i + " - " + nomeCompleto + "</p>");
+        else
+            document.write(`<p style="color:${cor}">` + i + ` - ` + nomeCompleto + `</p>`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
