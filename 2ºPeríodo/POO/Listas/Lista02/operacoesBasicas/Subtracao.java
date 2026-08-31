@@ -7,6 +7,6 @@ public class Subtracao {
     }
 
     public int subtrai(){
-        return x+y;
+        return x-y;
     }
 }
