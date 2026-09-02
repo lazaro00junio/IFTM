@@ -146,7 +146,7 @@ public class Lista01 {
             if (n != 0) {
                 exibe5(soma, n);
             } else {
-                exibe5(0, 0);
+                exibe5(soma, 0);
                 break;
             }
         }
@@ -167,14 +167,30 @@ public class Lista01 {
     }
 
     public static void exe5() {
-        int n = 0;
-        somar5(n, 0);
+        somar5(0,0);
 
+    }
+
+    public static int leNatutal6(){
+        int x=Integer.parseInt(JOptionPane.showInputDialog("Insira um número natural: "));
+        while(x<0){
+            x=Integer.parseInt(JOptionPane.showInputDialog("Entrada Inválida. Insira um número natural: "));
+        }
+        return x;
+    }
+
+    public static void fatorar(int n){
+
+    }
+
+    public static void exe6(){
+        int n = 0;
+        fatorar(5);
     }
 
     public static int menu() {
         return Integer.parseInt(JOptionPane.showInputDialog(
-                "    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n\n17- SAIR\n\nDIGITE A OPÇÃO:"));
+                "    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n5- Somar inteiros\n6- Exibir fatores\n\n17- SAIR\n\nDIGITE A OPÇÃO:"));
     }
 
     public static void main(String[] args) {
@@ -197,9 +213,9 @@ public class Lista01 {
                 case 5:
                     exe5();
                     break;
-                // case 6:
-                // exe6();
-                // break;
+                case 6:
+                    exe6();
+                break;
 
                 default:
                     System.out.println("Opcão inválida");
