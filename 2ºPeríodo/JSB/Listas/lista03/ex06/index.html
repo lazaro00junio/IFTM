@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+    <script src="js/script.js" defer></script>
+    <style>
+        input[type="button"]{
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Calculadora</h2>
+
+    <table>
+        <form>
+            <tr>
+                <td>
+                    <label for="valor1">1º Valor: </label>
+                </td>
+                <td colspan="3">
+                    <input type="text" id="valor1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="valor2">2º Valor: </label>
+                </td>
+                <td colspan="3">
+                    <input type="text" id="valor2">
+                </td>
+            </tr>
+            <tr class="linha3">
+                <td><input type="button" value="+" id="soma"></td>
+                <td><input type="button" value="-" id="subtracao"></td>
+                <td><input type="button" value="*" id="multiplicacao"></td>
+                <td><input type="button" value="/" id="divisao"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="resultado">Resultado: </label>
+                </td>
+                <td colspan="3">
+                    <input type="text" id="resultado">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>

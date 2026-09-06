@@ -12,9 +12,9 @@ function mostrarResultado(){
         && nota2<=50) && (nota1!="" && nota2!="")){
         total=parseFloat(nota1)+parseFloat(nota2);
         if(total>=60){    
-            alert("Você foi aprovado!");
+            alert(`Você foi aprovado! A sua nota final foi ${total} pontos.`);
         }else{
-            alert(`Voce foi reprovado.`);
+            alert(`Voce foi reprovado, faltaram ${60-total} pontos.`);
         }
     }else{  
         alert("Input inválido.");
