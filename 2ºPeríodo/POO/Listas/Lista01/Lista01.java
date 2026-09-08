@@ -1,9 +1,13 @@
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.stream.Collectors;
 import javax.swing.JOptionPane;
 
 public class Lista01 {
 
     // declaracão das variaveis globais
-    public static int somasNegativas = 0, somasPositivas = 0;
+    public static int somasNegativas = 0, somasPositivas = 0, somaDePares = 0, somaDeImpares = 0, numerosPares = 0,
+            numerosImpares = 0, numerosPositivos = 0, numerosNegativos = 0;
 
     public static int leInt1(int x) {
         return Integer.parseInt(JOptionPane.showInputDialog("Insira o " + x + "º número:"));
@@ -163,34 +167,112 @@ public class Lista01 {
         } else {
             JOptionPane.showMessageDialog(null,
                     "Somas positivas = " + somasPositivas + "\nSomas Negativas = " + somasNegativas);
+            somasNegativas = 0;
+            somasPositivas = 0;
         }
     }
 
     public static void exe5() {
-        somar5(0,0);
+        somar5(0, 0);
 
     }
 
-    public static int leNatutal6(){
-        int x=Integer.parseInt(JOptionPane.showInputDialog("Insira um número natural: "));
-        while(x<0){
-            x=Integer.parseInt(JOptionPane.showInputDialog("Entrada Inválida. Insira um número natural: "));
+    public static int leNatural6() {
+        int x = Integer.parseInt(JOptionPane.showInputDialog("Insira um número natural: "));
+        while (x < 0) {
+            x = Integer.parseInt(JOptionPane.showInputDialog("Entrada Inválida. Insira um número natural: "));
         }
         return x;
     }
 
-    public static void fatorar(int n){
-
+    public static void fatorar(int n) {
+        Integer[] fatores = new Integer[n];
+        int p = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                fatores[p] = i;
+                p++;
+            }
+        }
+        exibirFatores(fatores, n);
     }
 
-    public static void exe6(){
-        int n = 0;
-        fatorar(5);
+    public static void exibirFatores(Integer[] fatores, int n) {
+        String resultado = Arrays.stream(fatores).filter(Objects::nonNull).map(Object::toString)
+                .collect(Collectors.joining(", "));
+        JOptionPane.showMessageDialog(null, "Fatores de " + n + ": " + resultado + ".");
+        repetirCalculo();
+    }
+
+    public static void repetirCalculo() {
+        String r = JOptionPane.showInputDialog("Deseja repetir o calcúlo(s/S): ").trim().toLowerCase();
+        if (r.equals("s") || r.equals("sim")) {
+            exe6();
+        } else {
+            JOptionPane.showMessageDialog(null, "Entendido. Retornando a tela inicial...");
+        }
+    }
+
+    public static void exe6() {
+        int n = leNatural6();
+        fatorar(n);
+    }
+
+    public static int leInt7() {
+        int x;
+        return x=Integer.parseInt(JOptionPane.showInputDialog("Insira um número inteiro: "));
+    }
+
+    public static void somar7(int soma) {
+        int n = leInt7();
+        if (n == 0) {
+            exibir7(soma);
+        } else {
+            if (n > 0 && n % 2 == 0) {
+                numerosPositivos++;
+                numerosPares++;
+                somasPositivas += n;
+                somaDePares += n;
+            } else if (n < 0 && n % 2 == 0) {
+                numerosPares++;
+                numerosNegativos++;
+                somasNegativas += n;
+                somaDePares += n;
+            } else if (n > 0 && n % 2 != 0) {
+                numerosPositivos++;
+                numerosImpares++;
+                somasPositivas += n;
+                somaDeImpares += n;
+            } else if (n < 0 && n % 2 != 0) {
+                numerosNegativos++;
+                numerosImpares++;
+                somasNegativas += n;
+                somaDeImpares += n;
+            }
+            soma += n;
+            somar7(soma);
+        }
+    }
+
+    public static void exibir7(int soma) {
+        JOptionPane.showMessageDialog(null,"Quantidade de números positivos: "+numerosPositivos+"\nQuatidade de números negativos: "+numerosNegativos+"\nQuantidade de números pares: "+numerosPares+"\nQuantidade de números ímpares: "+numerosImpares+"\nSoma dos números positivos: "+somasPositivas+"\nSoma dos números negativos: "+somasNegativas+"\nSoma dos números pares: "+somaDePares+"\nSoma dos números ímpares: "+somaDeImpares+"\nSoma total: "+soma);
+        somasNegativas = 0;
+        somasPositivas = 0; 
+        somaDePares = 0;
+        somaDeImpares = 0; 
+        numerosPares = 0;
+        numerosImpares = 0; 
+        numerosPositivos = 0;
+        numerosNegativos = 0;
+    }
+
+    public static void exe7() {
+        somar7(0);
     }
 
     public static int menu() {
         return Integer.parseInt(JOptionPane.showInputDialog(
-                "    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n5- Somar inteiros\n6- Exibir fatores\n\n17- SAIR\n\nDIGITE A OPÇÃO:"));
+                "    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n5- Somar inteiros\n6- Exibir fatores\n7- Quantidade e soma de números inteiros\n17- SAIR\n\nDIGITE A OPÇÃO:"));
     }
 
     public static void main(String[] args) {
@@ -215,7 +297,10 @@ public class Lista01 {
                     break;
                 case 6:
                     exe6();
-                break;
+                    break;
+                case 7:
+                    exe7();
+                    break;
 
                 default:
                     System.out.println("Opcão inválida");
