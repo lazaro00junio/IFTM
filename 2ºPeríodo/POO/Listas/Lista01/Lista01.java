@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import javax.swing.JOptionPane;
 
@@ -220,7 +221,7 @@ public class Lista01 {
 
     public static int leInt7() {
         int x;
-        return x=Integer.parseInt(JOptionPane.showInputDialog("Insira um número inteiro: "));
+        return x = Integer.parseInt(JOptionPane.showInputDialog("Insira um número inteiro: "));
     }
 
     public static void somar7(int soma) {
@@ -255,13 +256,17 @@ public class Lista01 {
     }
 
     public static void exibir7(int soma) {
-        JOptionPane.showMessageDialog(null,"Quantidade de números positivos: "+numerosPositivos+"\nQuatidade de números negativos: "+numerosNegativos+"\nQuantidade de números pares: "+numerosPares+"\nQuantidade de números ímpares: "+numerosImpares+"\nSoma dos números positivos: "+somasPositivas+"\nSoma dos números negativos: "+somasNegativas+"\nSoma dos números pares: "+somaDePares+"\nSoma dos números ímpares: "+somaDeImpares+"\nSoma total: "+soma);
+        JOptionPane.showMessageDialog(null, "Quantidade de números positivos: " + numerosPositivos
+                + "\nQuatidade de números negativos: " + numerosNegativos + "\nQuantidade de números pares: "
+                + numerosPares + "\nQuantidade de números ímpares: " + numerosImpares + "\nSoma dos números positivos: "
+                + somasPositivas + "\nSoma dos números negativos: " + somasNegativas + "\nSoma dos números pares: "
+                + somaDePares + "\nSoma dos números ímpares: " + somaDeImpares + "\nSoma total: " + soma);
         somasNegativas = 0;
-        somasPositivas = 0; 
+        somasPositivas = 0;
         somaDePares = 0;
-        somaDeImpares = 0; 
+        somaDeImpares = 0;
         numerosPares = 0;
-        numerosImpares = 0; 
+        numerosImpares = 0;
         numerosPositivos = 0;
         numerosNegativos = 0;
     }
@@ -270,9 +275,140 @@ public class Lista01 {
         somar7(0);
     }
 
+    public static int leNatural8() {
+        Scanner s = new Scanner(System.in);
+        int n = Integer.parseInt(JOptionPane.showInputDialog("Insira um número natural: "));
+        while (n < 0) {
+            n = Integer.parseInt(JOptionPane.showInputDialog("Input inválido.\nInsira um número natural: "));
+        }
+        return n;
+    }
+
+    public static boolean verificarPrimo(int n) {
+        if (n < 2) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
+    public static void exibir8(boolean b) {
+        if (b) {
+            JOptionPane.showMessageDialog(null, "O número digitado é primo.");
+        } else {
+            JOptionPane.showMessageDialog(null, "O número digitado não é primo.");
+        }
+    }
+
+    public static void exe8() {
+        int n = leNatural8();
+        exibir8(verificarPrimo(n));
+    }
+
+    public static long leNatural9() {
+        Scanner s = new Scanner(System.in);
+        long n = Integer.parseInt(JOptionPane.showInputDialog("Insira um número natural: "));
+        while (n < 0) {
+            n = Integer.parseInt(
+                    JOptionPane.showInputDialog("O número digitado não é natural.\nInsira um número natural: "));
+        }
+        return n;
+    }
+
+    public static long fatorial(long n) {
+        long f = 1;
+        for (int i = 1; i <= n; i++) {
+            f *= i;
+        }
+        return f;
+    }
+
+    public static void exibir9(long n, long f) {
+        JOptionPane.showMessageDialog(null, "O fatorial de " + n + " é " + f + ".");
+    }
+
+    public static void exe9() {
+        long n = leNatural9();
+        exibir9(n, fatorial(n));
+    }
+
+    public static int leNatural10() {
+        Scanner s = new Scanner(System.in);
+        int n = Integer.parseInt(JOptionPane.showInputDialog("Insira um número natural: "));
+        while (n < 0) {
+            n = Integer.parseInt(
+                    JOptionPane.showInputDialog("O número digitado não é natural.\nInsira um número natural: "));
+        }
+        return n;
+    }
+
+    public static int mmc(int x, int y) {
+        int mmc = x;
+        while (mmc % y != 0) {
+            mmc += x;
+        }
+        return mmc;
+    }
+
+    public static void exibe10(int x, int y, int mmc) {
+        JOptionPane.showMessageDialog(null, "O MMC de " + x + " e " + y + " é " + mmc + ".");
+    }
+
+    public static void exe10() {
+        int x, y;
+        x = leNatural10();
+        y = leNatural10();
+        exibe10(x, y, mmc(x, y));
+    }
+
+    public static int leNatural11() {
+        Scanner s = new Scanner(System.in);
+        int n = Integer.parseInt(JOptionPane.showInputDialog("Insira um número natural: "));
+        while (n < 0) {
+            n = Integer.parseInt(
+                    JOptionPane.showInputDialog("O número digitado não é natural.\nInsira um número natural: "));
+        }
+        return n;
+    }
+
+    public static int mdc(int x, int y) {
+        int resto = 0, menor = 1;
+
+        if (y > x) {
+            menor = x;
+            x = y;
+            y = menor;
+        }
+
+        while (resto != 0) {
+            resto = x % y;
+            x = y;
+            y = resto;
+        }
+        return x;
+    }
+
+    public static void exibe11(int x, int y, int mdc) {
+        JOptionPane.showMessageDialog(null, "O MMC de " + x + " e " + y + " é " + mdc + ".");
+    }
+
+    public static void exe11() {
+        int x, y;
+        x = leNatural11();
+        y = leNatural11();
+        exibe11(x,y,mdc(x, y));
+    }
+
     public static int menu() {
         return Integer.parseInt(JOptionPane.showInputDialog(
-                "    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n5- Somar inteiros\n6- Exibir fatores\n7- Quantidade e soma de números inteiros\n17- SAIR\n\nDIGITE A OPÇÃO:"));
+                "    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n5- Somar inteiros\n6- Exibir fatores\n7- Quantidade e soma de números inteiros\n8- Verificar número primo\n9- Calcular fatorial\n10- Calcular MMC\n11- Calcular MDC\n17- SAIR\n\nDIGITE A OPÇÃO:"));
     }
 
     public static void main(String[] args) {
@@ -301,7 +437,18 @@ public class Lista01 {
                 case 7:
                     exe7();
                     break;
-
+                case 8:
+                    exe8();
+                    break;
+                case 9:
+                    exe9();
+                    break;
+                case 10:
+                    exe10();
+                    break;
+                case 11:
+                    exe11();
+                    break;
                 default:
                     System.out.println("Opcão inválida");
             }
