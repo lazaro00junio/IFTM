@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Prova Prática: Gerenciador de Crachás    </title>
+</head>
+
+<body>
+    <h2>Cadastro do Crachá</h2>
+    <table>
+
+        <form>
+            <tr>
+                <td>
+                    <label for="primeiro-nome">Primeiro Nome:</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="primeiro-nome">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="sobrenome">Restante do nome: </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="sobrenome">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="cargo">Cargo(Professor ou Desenvolvedor)</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="cargo">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Escolha o Minicurso: </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="HTML5" id="HTML5">
+                    <input type="button" value="CSS3" id="CSS3">
+                    <input type="button" value="JavaScript" id="JS">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Crachá gerado</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <h3 id="nome-cracha"></h3>
+                        <p id="iniciais"></p>
+                        <span id="minicurso-cracha"> </span>
+                        <span id="cargoCracha"> </span>
+                        <span id="sala"> </span>
+                    </div>
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>
