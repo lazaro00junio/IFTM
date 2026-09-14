@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 public class Lista01 {
@@ -403,12 +404,189 @@ public class Lista01 {
         int x, y;
         x = leNatural11();
         y = leNatural11();
-        exibe11(x,y,mdc(x, y));
+        exibe11(x, y, mdc(x, y));
+    }
+
+    public static int leNatural12() {
+        Scanner s = new Scanner(System.in);
+        int n = Integer.parseInt(JOptionPane
+                .showInputDialog("Insira a quantidade de termos da sequência (o número deve ser natural):  "));
+        while (n < 0) {
+            n = Integer.parseInt(
+                    JOptionPane.showInputDialog("O número digitado não é natural.\nInsira um número natural: "));
+        }
+        return n;
+    }
+
+    public static int fib(int n) {
+        if (n < 2) {
+            return n;
+        } else {
+            return fib(n - 1) + fib(n - 2);
+        }
+    }
+
+    public static void exibir12(int n) {
+        String resultado;
+        Integer[] seq = new Integer[n];
+
+        for (int i = 1; i <= n; i++) {
+            seq[i - 1] = fib(i);
+        }
+
+        resultado = Arrays.stream(seq).map(Object::toString).collect(Collectors.joining(", "));
+
+        JOptionPane.showMessageDialog(null, "fib(" + n + "): " + resultado + ".");
+
+    }
+
+    public static void exe12() {
+        int n = leNatural12();
+        exibir12(n);
+    }
+
+    public static double leDouble13(String msg) {
+        Scanner s = new Scanner(System.in);
+        double x;
+        return x = Double.parseDouble(JOptionPane.showInputDialog(msg));
+    }
+
+    public static int leNatural13() {
+        Scanner s = new Scanner(System.in);
+        int n = Integer.parseInt(JOptionPane
+                .showInputDialog("Insira a quantidade de termos da PA (o número deve ser natural):  "));
+        while (n < 0) {
+            n = Integer.parseInt(
+                    JOptionPane.showInputDialog("O número digitado não é natural.\nInsira um número natural: "));
+        }
+        return n;
+    }
+
+    public static Double[] pa(double pt, double razao, int qtd) {
+        Double[] pa = new Double[qtd];
+        for (int i = 0; i < qtd; i++) {
+            pa[i] = pt + razao * i;
+        }
+        return pa;
+    }
+
+    public static void exibirPA(Double[] pa) {
+        String resultado = Arrays.stream(pa).map(Object::toString).collect(Collectors.joining(", "));
+
+        JOptionPane.showMessageDialog(null, "PA(" + resultado + ").");
+    }
+
+    public static void exe13() {
+        double luisInacioLulaDaSilva, razao;
+        int qtd;
+        luisInacioLulaDaSilva = leDouble13("Digite o primeiro termo da PA: ");
+        razao = leDouble13("Digite a razão da PA: ");
+        qtd = leNatural13();
+        exibirPA(pa(luisInacioLulaDaSilva, razao, qtd));
+    }
+
+    public static double leDouble14(String msg) {
+        Scanner s = new Scanner(System.in);
+        double x;
+        return x = Double.parseDouble(JOptionPane.showInputDialog(msg));
+    }
+
+    public static int leNatural14() {
+        Scanner s = new Scanner(System.in);
+        int n = Integer.parseInt(JOptionPane
+                .showInputDialog("Insira a quantidade de termos da PG (o número deve ser natural):  "));
+        while (n < 0) {
+            n = Integer.parseInt(
+                    JOptionPane.showInputDialog("O número digitado não é natural.\nInsira um número natural: "));
+        }
+        return n;
+    }
+
+    public static double somaPG(double pt, double razao, double qtd) {
+        double ta = pt * Math.pow(razao, qtd - 1);
+        if (qtd == 1) {
+            return pt;
+        } else {
+            return ta += somaPG(pt, razao, qtd - 1);
+        }
+    }
+
+    public static void exibirSomaPG(double soma) {
+        JOptionPane.showMessageDialog(null, "Soma = " + soma);
+    }
+
+    public static void exe14() {
+        double luisInacioLulaDaSilva, razao;
+        int qtd;
+        luisInacioLulaDaSilva = leDouble14("Digite o primeiro termo da PG: ");
+        razao = leDouble14("Digite a razão da PG: ");
+        qtd = leNatural13();
+        exibirSomaPG(somaPG(luisInacioLulaDaSilva, razao, qtd));
+    }
+
+    public static void tab(int qtd) {
+        String[] tabuada = new String[qtd];
+        for (int i = 1; i <= qtd; i++) {
+            for (int j = 1; j <= 10; j++) {
+                exibirTabuada(tabuada, (tabuada(i, j)), j);
+            }
+        }
+    }
+
+    public static String tabuada(int i, int j) {
+        String linha = " ";
+        return linha = (i + "*" + j + "=" + (i * j));
+
+    }
+
+    public static void exibirTabuada(String[] tabuada, String linha, int i) {
+        tabuada[i - 1] = linha;
+        if (i == 10) {
+            JOptionPane.showMessageDialog(null, new JList(tabuada));
+        }
+    }
+
+    public static void exe15() {
+        tab(10);
+    }
+
+    public static int leNatural16() {
+        Scanner s = new Scanner(System.in);
+        int n = Integer.parseInt(JOptionPane
+                .showInputDialog("Digite um número natural:  "));
+        while (n < 0) {
+            n = Integer.parseInt(
+                    JOptionPane.showInputDialog("O número digitado não é natural.\nInsira um número natural: "));
+        }
+        return n;
+    }
+
+    public static boolean numeroPerfeito(int n) {
+        int soma = 0;
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                soma += i;
+            }
+        }
+        return soma == n;
+    }
+
+    public static void exibirPerfeito(boolean pf) {
+        if (pf) {
+            JOptionPane.showMessageDialog(null, "O número digitado é perfeito");
+        } else {
+            JOptionPane.showMessageDialog(null, "O número digitado não é perfeito");
+        }
+    }
+
+    public static void exe16() {
+        int n = leNatural16();
+        exibirPerfeito(numeroPerfeito(n));
     }
 
     public static int menu() {
         return Integer.parseInt(JOptionPane.showInputDialog(
-                "    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n5- Somar inteiros\n6- Exibir fatores\n7- Quantidade e soma de números inteiros\n8- Verificar número primo\n9- Calcular fatorial\n10- Calcular MMC\n11- Calcular MDC\n17- SAIR\n\nDIGITE A OPÇÃO:"));
+                "    \t MENU\n\n1- Compara Números\n2- Equação do Segundo Grau\n3- Calcula média aritimética \n4- Tipo do triângulos\n5- Somar inteiros\n6- Exibir fatores\n7- Quantidade e soma de números inteiros\n8- Verificar número primo\n9- Calcular fatorial\n10- Calcular MMC\n11- Calcular MDC\n12- Sequência de Fibonacci\n13- Progressão Aritmética\n14- Soma dos elementos da PG\n15- Tabuada da multiplicação de 1 a 10\n16- Verificar número perfeito\n17- SAIR\n\nDIGITE A OPÇÃO:"));
     }
 
     public static void main(String[] args) {
@@ -448,6 +626,21 @@ public class Lista01 {
                     break;
                 case 11:
                     exe11();
+                    break;
+                case 12:
+                    exe12();
+                    break;
+                case 13:
+                    exe13();
+                    break;
+                case 14:
+                    exe14();
+                    break;
+                case 15:
+                    exe15();
+                    break;
+                case 16:
+                    exe16();
                     break;
                 default:
                     System.out.println("Opcão inválida");
