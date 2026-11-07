@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form class="formBotoes">
+        <select name="Selecione a sua dificuldade" id="dificuldade">
+            <option value="" disabled selected>Selecione a sua dificuldade</option>
+            <option value="1000">Fácil</option>
+            <option value="750">Médio</option>
+            <option value="500">Difícil</option>
+            <option value="250">Expert</option>
+        </select>   
+        <div>
+            <input type="button" value="Play" id="btnPlay">
+            <input type="button" value="Pause" id="btnPause">
+            <input type="button" value="Stop">
+        </div>
+    </form>
+    <div class="numContainer">
+        <p id="nroAleatorio">Press Play!</p>
+    </div>
+    <div>
+        <div>
+            <p>ACERTOS</p>
+            <p><span id="acertos">_</span>/<span id="total">_</span></p>
+        </div>
+        <div>
+            <p>ERROS</p>
+            <p id="erros">_</p>
+        </div>
+    </div>
+</body>
+</html>

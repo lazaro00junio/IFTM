@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Redaction+35:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Redaction 35",serif;
+}
+
+.formBotoes{
+    margin: auto;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(41, 41, 41);
+}
+
+.formBotoes input[type="button"] {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: 2px solid red;
+    outline-offset: 2px;
+    margin-left: 20px;
+    transition: all 0.1s;
+}
+
+.formBotoes input[type="button"]:hover{
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+    outline-offset: 5px;
+}
+
+.formBotoes input[type="button"]:active {
+    transform: scale(0.9);
+    outline-offset: 0px;
+}
+.numContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.numContainer p {
+    font-size: 400px;
+}
