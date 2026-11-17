@@ -38,4 +38,30 @@ public class Produto{
     }
 
     
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public boolean isPromocao() {
+        return promocao;
+    }
+
+    public void setPromocao(boolean promocao) {
+        this.promocao = promocao;
+    }
+
+    public static int getTotalProdutosCadastrados() {
+        return totalProdutosCadastrados;
+    }
+
+    public static void setTotalProdutosCadastrados(int totalProdutosCadastrados) {
+        Produto.totalProdutosCadastrados = totalProdutosCadastrados;
+    }
+
+
+    
 }

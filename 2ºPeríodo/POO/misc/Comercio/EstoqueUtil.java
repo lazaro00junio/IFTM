@@ -9,6 +9,6 @@ public class EstoqueUtil{
     }
     
     public static String formatarMoeda(double valor){
-        return String.format(new Locale("pt", "BR"),"R$ %,2f",valor);
+        return String.format(new Locale("pt", "BR"),"R$ %,.2f",valor);
     }
 }
