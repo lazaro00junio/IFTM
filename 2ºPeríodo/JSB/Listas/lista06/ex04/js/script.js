@@ -9,5 +9,5 @@ function redirecionar(){
     document.getElementById("tempo").innerHTML=tempo;
     tempo--;
     if(tempo==0)
-        window.location.href = "https://www.google.com";
+        window.location.href = "https://www.google.com"
 }
