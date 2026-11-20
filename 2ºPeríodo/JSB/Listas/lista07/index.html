@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,37 @@
     <script src="js/script.js" defer></script>
     <script src="jMaskWiFi/js/jMaskWiFi.js" defer></script>
 </head>
+
 <body>
     <form>
+        <label for="campoDataNasc">Data de Nascimento: </label>
         <input type="text" id="campoDataNasc" value="20/07/1995">
         <input type="button" value="Validar" id="btnValidar1">
         <br>
+        <label for="campoDataNasc">CPF: </label>
+        <input type="text" id="campoCPF" value="123.321.654-91"
+            onkeypress="inserirMascara('campoCPF','000.000.000-00')">
+        <input type="button" value="Validar" id="btnValidar2">
+        <br>
+        <label for="campoMatricula">Número de matrícula do IFTM: </label>
+        <input type="text" id="campoMatricula" value="IFTM-123/324-xy">
+        <input type="button" value="Validar" id="btnValidar3">
+        <br>
+        <label for="campoCodDisc1">Código de uma disciplina do IFTM A: </label>
+        <input type="text" id="campoCodDisc1" onkeypress="inserirMascara('campoCodDisc1','aa-00.000-aaaa')"
+            value="MT-12.123-IFTM">
+        <input type="button" value="Validar" id="btnValidar4">
+        <br>
+        <label for="campoCodDisc2">Código de uma disciplina do IFTM B:</label>
+        <input type="text" id="campoCodDisc2" onkeypress="inserirMascara('campoCodDisc1','aa-00.000-aaaa')"
+            value="MT-12.123-iftm">
+        <input type="button" value="Validar" id="btnValidar5">
+        <br>
+        <label for="campoCodDisc3">Código de uma disciplina do IFTM C:</label>
+        <input type="text" id="campoCodDisc3" value="MT-12.123-if tm">
+        <input type="button" value="Validar" id="btnValidar6">
+        <br>
     </form>
 </body>
+
 </html>
